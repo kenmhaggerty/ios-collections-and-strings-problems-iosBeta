@@ -13,6 +13,8 @@
     
     NSLog(@"%@", [self translatePigLatinToEnglish:@"Hetay uickqay rownbay oxfay"]);
     
+    NSLog(@"%@", [self combineByAlternatingArray:@[@"a", @"b", @"c"] withArray:@[@1, @2, @3]]);
+    
     return YES;
 }
 
@@ -74,7 +76,18 @@
 
 - (NSArray *)combineByAlternatingArray:(NSArray *)array1 withArray:(NSArray *)array2 {
     
-    return nil;
+    NSMutableArray *combinedArray = [NSMutableArray arrayWithCapacity:array1.count+array2.count];
+    NSArray *array;
+    NSUInteger index;
+    for (NSUInteger i = 0; i < MAX(array1.count, array2.count)*2; i++) {
+        if (i % 2) array = array2;
+        else array = array1;
+        index = (i-(i % 2))/2;
+        if (index >= array.count) continue;
+        
+        [combinedArray addObject:[array objectAtIndex:index]];
+    }
+    return combinedArray;
 }
 
 @end
