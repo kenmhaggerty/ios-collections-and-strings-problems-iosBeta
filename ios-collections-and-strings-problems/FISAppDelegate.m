@@ -29,4 +29,14 @@
     NSLog(@"%@", frame);
 }
 
+- (NSString *)translateEnglishToPigLatin:(NSString *)string {
+    
+    return nil;
+}
+
+- (NSString *)translatePigLatinToEnglish:(NSString *)string {
+    
+    return nil;
+}
+
 @end
