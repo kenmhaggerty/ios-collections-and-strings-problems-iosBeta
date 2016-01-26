@@ -72,4 +72,9 @@
     return [words componentsJoinedByString:@" "];
 }
 
+- (NSArray *)combineByAlternatingArray:(NSArray *)array1 withArray:(NSArray *)array2 {
+    
+    return nil;
+}
+
 @end
