@@ -9,10 +9,9 @@
     return YES;
 }
 
-/**
- 
- * Write your method implementations here!
- 
- */
+- (void)printStringInFrame:(NSString *)string {
+    
+    //
+}
 
 @end
