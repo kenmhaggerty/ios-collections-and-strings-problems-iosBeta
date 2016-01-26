@@ -11,6 +11,8 @@
     
     NSLog(@"%@", [self translateEnglishToPigLatin:@"The quick brown fox"]);
     
+    NSLog(@"%@", [self translatePigLatinToEnglish:@"Hetay uickqay rownbay oxfay"]);
+    
     return YES;
 }
 
@@ -52,7 +54,22 @@
 
 - (NSString *)translatePigLatinToEnglish:(NSString *)string {
     
-    return nil;
+    NSString *suffix = @"ay";
+    NSMutableArray *words = [NSMutableArray arrayWithArray:[string componentsSeparatedByString:@" "]];
+    NSString *word, *english, *character;
+    for (NSUInteger i = 0; i < words.count; i++) {
+        english = @"";
+        word = [words objectAtIndex:i];
+        word = [word substringToIndex:word.length-suffix.length];
+        for (NSUInteger j = 0; j < word.length; j++) {
+            character = [NSString stringWithFormat:@"%c", [word characterAtIndex:((j+word.length-1)%word.length)]];
+            if ([[NSCharacterSet uppercaseLetterCharacterSet] characterIsMember:[word characterAtIndex:j]]) character = character.uppercaseString;
+            else character = character.lowercaseString;
+            english = [english stringByAppendingString:character];
+        }
+        [words replaceObjectAtIndex:i withObject:english];
+    }
+    return [words componentsJoinedByString:@" "];
 }
 
 @end
