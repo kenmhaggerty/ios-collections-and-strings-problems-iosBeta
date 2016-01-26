@@ -6,6 +6,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-- (void)printStringInFrame:(NSString *)string;
+- (void)printArrayOfStringsInFrame:(NSArray *)strings;
 
 @end

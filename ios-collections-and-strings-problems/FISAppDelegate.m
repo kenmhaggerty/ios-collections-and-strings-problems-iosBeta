@@ -9,7 +9,7 @@
     return YES;
 }
 
-- (void)printStringInFrame:(NSString *)string {
+- (void)printArrayOfStringsInFrame:(NSArray *)strings {
     
     //
 }
