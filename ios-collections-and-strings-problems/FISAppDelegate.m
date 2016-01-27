@@ -17,6 +17,10 @@
     
     NSLog(@"%@", [self integerToArray:12045]);
     
+    NSMutableArray *array = [@[@1, @2, @0, @4, @5] mutableCopy];
+    [self reverseArray:array];
+    NSLog(@"%@", array);
+    
     return YES;
 }
 
@@ -104,7 +108,12 @@
 
 - (void)reverseArray:(NSMutableArray *)array {
     
-    //
+    id object;
+    for (NSUInteger i = 0; i < array.count-1; i++) {
+        object = [array lastObject];
+        [array removeLastObject];
+        [array insertObject:object atIndex:i];
+    }
 }
 
 @end
