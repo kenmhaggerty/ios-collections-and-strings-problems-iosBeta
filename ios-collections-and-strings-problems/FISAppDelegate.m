@@ -15,6 +15,8 @@
     
     NSLog(@"%@", [self combineByAlternatingArray:@[@"a", @"b", @"c"] withArray:@[@1, @2, @3]]);
     
+    NSLog(@"%@", [self integerToArray:12045]);
+    
     return YES;
 }
 
@@ -92,7 +94,12 @@
 
 - (NSArray *)integerToArray:(NSUInteger)integer {
     
-    return nil;
+    NSUInteger power = (NSUInteger)floorf(log10f(integer));
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:power];
+    for (NSUInteger i = 0; i <= power; i++) {
+        [array insertObject:[NSNumber numberWithInt:(int)floorf(integer/powf(10, i))%10] atIndex:0];
+    }
+    return array;
 }
 
 @end
