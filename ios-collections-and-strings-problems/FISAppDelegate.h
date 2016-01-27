@@ -11,5 +11,6 @@
 - (NSString *)translatePigLatinToEnglish:(NSString *)string;
 - (NSArray *)combineByAlternatingArray:(NSArray *)array1 withArray:(NSArray *)array2;
 - (NSArray *)integerToArray:(NSUInteger)integer;
+- (void)reverseArray:(NSMutableArray *)array;
 
 @end
