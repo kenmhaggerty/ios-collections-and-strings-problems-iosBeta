@@ -90,4 +90,9 @@
     return combinedArray;
 }
 
+- (NSArray *)integerToArray:(NSUInteger)integer {
+    
+    return nil;
+}
+
 @end
